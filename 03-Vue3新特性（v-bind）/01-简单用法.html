@@ -1,0 +1,20 @@
+<script setup>
+  // 这里可以是原始对象值，也可以是ref()或reactive()包裹的值，根据具体需求而定
+  const theme = {
+    color: 'red'
+  }
+</script>
+
+<template>
+  <p>hello</p>
+</template>
+
+<style scoped>
+  p {
+    color: v-bind('theme.color');
+    /* Vue3中在style样式
+    通过v-bind()绑定变量的原理其实就是给元素绑定CSS变量，
+    在绑定的数据更新时调用
+    CSSStyleDeclaration.setProperty更新CSS变量值。 */
+  }
+</style>

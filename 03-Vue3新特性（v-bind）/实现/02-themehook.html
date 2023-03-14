@@ -1,0 +1,49 @@
+<script setup lang="ts">
+  import { useTheme } from './useTheme.ts';
+  import MyButton from './components/MyButton.vue';
+
+  const { theme } = useTheme();
+</script>
+
+<template>
+  <div class="box">
+    <span>Hello</span>
+  </div>
+  <my-button />
+</template>
+
+<style lang="scss">
+  .box {
+    width: 100px;
+    height: 100px;
+    background: v-bind('theme.background');
+    color: v-bind('theme.fontColor');
+    font-size: v-bind('theme.fontSize');
+  }
+</style>
+
+<script setup lang="ts">
+  import { useTheme } from '../useTheme.ts';
+
+  const { theme, setDarkTheme, setDayTheme } = useTheme();
+
+  const change1 = () => {
+    setDarkTheme();
+  };
+
+  const change2 = () => {
+    setDayTheme();
+  };
+</script>
+
+<template>
+  <button class="my-btn" @click="change1">dark</button>
+  <button class="my-btn" @click="change2">day</button>
+</template>
+
+<style scoped lang="scss">
+  .my-btn {
+    color: v-bind('theme.fontColor');
+    background: v-bind('theme.background');
+  }
+</style>

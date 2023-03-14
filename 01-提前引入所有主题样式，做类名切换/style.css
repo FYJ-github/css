@@ -1,0 +1,16 @@
+/* day样式主题 */
+body.day .box {
+  color: #f90;
+  background: #fff;
+}
+/* dark样式主题 */
+body.dark .box {
+  color: #eee;
+  background: #333;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+}
